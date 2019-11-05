@@ -8,15 +8,15 @@
         <div class="codelogin-content">
             <h2>欢迎登陆苏宁易购</h2>
             <div class="codelogin-inputBox">
-                <input type="tel" maxlength="11" placeholder="请输入手机号/用户名/邮箱" v-model="userName">
+                <input type="tel" placeholder="请输入手机号/用户名/邮箱" v-model="userName">
                 <span class="el-icon-error" @click="clearInfoClick"></span>
             </div>
             <div class="codelogin-inputBox">
-                <input maxlength="15" :type="pwd" placeholder="请输入密码" v-model="userPassword">
+                <input type="password" placeholder="请输入密码" v-model="userPassword">
                 <div>
                     <span class="el-icon-error" @click="clearInfoClick"></span>
-                    <span @click="iconyanjingTtianchongClick('text')" v-if="show==='iconyanjing'" class="iconfont iconyanjing"></span>
-                    <span @click="iconyanjingClick('password')" v-if="show==='iconyanjing-tianchong'" class="iconfont iconyanjing-tianchong"></span>
+                    <span @click="iconyanjingTtianchongClick" v-if="show==='iconyanjing'" class="iconfont iconyanjing"></span>
+                    <span @click="iconyanjingClick" v-if="show==='iconyanjing-tianchong'" class="iconfont iconyanjing-tianchong"></span>
                     <span class="codelogin-inputBox-paddword">忘记密码</span>
                 </div>
             </div>
@@ -35,8 +35,7 @@ export default {
             show: 'iconyanjing',
             userName:'',
             userPassword:'',
-            isWrite:false,
-            pwd: 'password'
+            isWrite:false
         }
     },
     computed:{
@@ -46,13 +45,11 @@ export default {
         yzmloginClick() {
             this.$emit('yzmlogin-click')
         },
-        iconyanjingTtianchongClick(pwd) {
+        iconyanjingTtianchongClick() {
             this.show = 'iconyanjing-tianchong'
-            this.pwd = pwd
         },
-        iconyanjingClick(pwd) {
+        iconyanjingClick() {
             this.show = 'iconyanjing'
-            this.pwd = pwd
         },
         logInClick(){
             // 本地存储不存在不能时 不能直接使用json转之后判断判断

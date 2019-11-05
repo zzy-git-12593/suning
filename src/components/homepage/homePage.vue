@@ -43,7 +43,7 @@
           <div class="nav-test">搜索</div>
         </div>
 
-        <a href="https://c.m.suning.com/channel/higoubq11.html?utm_source=baidu&utm_midium=brand&utm_content=&utm_campaign=title" class="nav-box other" @click="backOhter" :class="{'home-actice':index=='/homepage/other'}" >
+        <a href="https://c.m.suning.com/channel/higoubq11.html?utm_source=baidu&utm_midium=brand&utm_content=&utm_campaign=title" class="nav-box other">
           <i class="iconfont icon-home"></i>
           <div class="nav-test">必抢清单</div>
         </a>
@@ -150,11 +150,7 @@ export default {
         this.homeIconShow = false;
       }
     },
-    backOhter() {
-      // if (this.$route.path != "/homepage/other") {
-      //   this.$router.push("/homepage/other");
-      // }
-    },
+
     backShopCar() {
       if (this.$route.path != "/homepage/shoppingcar") {
         this.$router.push("/homepage/shoppingcar");
@@ -180,7 +176,8 @@ export default {
 .other{
   outline: none;
   text-decoration: none;
-  color: #333333;
+  color: #333333
+
 }
 .home-container {
   width: 100%;

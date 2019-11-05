@@ -76,6 +76,7 @@ export default {
     } else {
       this.searchcmmdtyTitle = this.$route.query.searchtext;
     }
+    
     axios.get("http://localhost:3000/typeList").then(res => {
       res.data.filter(item => {
         if (item.cmmdtyTitle.includes(this.searchcmmdtyTitle)) {

@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    // 动画 页面跳转
     fade: '',
     popularList: [],
     lists: [],
@@ -13,10 +14,6 @@ export default new Vuex.Store({
     typeInputList: [],
     commodityInfoList: null,
     shoppingCarList: [],
-    // 父子组件之间监听滚动事件，修改导航栏home图标切换
-    // homeIconShow: true,
-    // 登录状态码
-    // isLogin: false,
     //购买全选按钮
     isBuyCheck: false,
     // 删除按钮
@@ -116,21 +113,6 @@ export default new Vuex.Store({
         }
         // 本地不存在则添加商品
       }
-      // else {
-      //   state.shoppingCarList.push({
-      //     id: obj.id,
-      //     cmmdtyTitle: obj.cmmdtyTitle,
-      //     imgUrl: obj.imgUrl,
-      //     price: obj.price,
-      //     color: obj.color,
-      //     count: obj.count,
-      //     toalPrices: 0,
-      //     isDelChosed: false,
-      //     isChosed: false
-      //   })
-      //   console.log('本地没有数据，添加数据', state.shoppingCarList)
-      // }
-      // 本地同步数据
       localStorage.shoppingCarList = JSON.stringify(state.shoppingCarList)
     },
 
@@ -186,8 +168,8 @@ export default new Vuex.Store({
             return item.isChosed = false
           })
         }
-        state.shoppingCarList.forEach(item=>{
-          return item.toalPrices = item.count*item.price
+        state.shoppingCarList.forEach(item => {
+          return item.toalPrices = item.count * item.price
         })
       }
 
@@ -199,7 +181,7 @@ export default new Vuex.Store({
     shoppingCarDelCommdlity(state) {
       if (state.isDelCheck) {
         state.shoppingCarList = []
-        localStorage.clear()
+        localStorage.shoppingCarList = []
         state.isBuyCheck = false
         state.isDelBtn = false
       } else {
@@ -261,7 +243,7 @@ export default new Vuex.Store({
         state.shoppingCarList.forEach(item => {
           if (item.id == obj.id) {
             item.count++
-            item.toalPrices+=item.price
+            item.toalPrices += item.price
             console.log('-------相同，添加数量----------')
           }
         })
@@ -329,7 +311,7 @@ export default new Vuex.Store({
     computedPrice(state) {
       let result = 0
       for (let i = 0; i < state.shoppingCarList.length; i++) {
-        if (state.shoppingCarList[i].isChosed||state.isBuyCheck) {
+        if (state.shoppingCarList[i].isChosed || state.isBuyCheck) {
           result += state.shoppingCarList[i].toalPrices
         }
         // 不可以再跟else reuslt=0,否则result等于被重新赋值，return后的值被显示在页面

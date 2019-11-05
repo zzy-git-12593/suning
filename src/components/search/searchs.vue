@@ -59,11 +59,11 @@ export default {
     };
   },
   beforeMount() {
-    bus.$on("isShow", data => {
+    bus.$on("isShow", data => { 
       this.isShow = data;
     });
   },
-  mounted () {
+  created () {
       if(localStorage.searchHistoryList){
         this.searchHistoryList =JSON.parse(localStorage.searchHistoryList)
       }
@@ -83,9 +83,9 @@ export default {
             if (this.searchText.trim().length) {
               if (item.cmmdtyTitle.includes(this.searchText)) {
                   this.searchResult.push(item);
-                  return this.searchResult;
+                  // return this.searchResult;
               }
-              // 当找到商品的时候吗，完成列表和未搜索到提示显示 
+              // 当找到商品的时候，完成列表和未搜索到提示显示 
               if (this.searchResult.length > 0) {
                 this.isNone = false;
                 this.noFind = false;
@@ -95,7 +95,7 @@ export default {
               } 
             } else {
                 this.isNone = true;
-                this.noFind = true;
+                this.noFind = false;
               }
           });
         });
@@ -106,6 +106,10 @@ export default {
             this.$router.push('/homepage/type')
         }else{
           this.$router.go(-1)
+          // 返回置空
+          this.searchText =''
+          this.isNone =true
+          this.noFind = false
         }
         
         this.$store.commit('searchChangeTransition')
@@ -113,6 +117,9 @@ export default {
     goSearch() {
       if (this.$route.path == "/search/searchover") {
           this.$router.push("/search");
+          this.searchText =''
+          this.isNone =true
+          this.noFind = false
       }
     },
     // 跳转路由，携带搜索参数
@@ -138,7 +145,7 @@ export default {
     },
     // 点击历史记录搜索
     historySearch(item){
-      this.searchText =item
+      this.searchText = item
       this.goSearchOver()
     }
   }

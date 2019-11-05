@@ -8,15 +8,15 @@
         <div class="codelogin-content">
             <h2>欢迎登陆苏宁易购</h2>
             <div class="codelogin-inputBox">
-                <input maxlength="11" type="tel" placeholder="请输入手机号">
+                <input type="tel" placeholder="请输入手机号">
                 <span class="el-icon-error"></span>
             </div>
             <div class="codelogin-yzm">
                 <div class="codelogin-yzm-lable">
-                    <input maxlength="1" class="lable" for="yzminput">
-                    <input maxlength="1" class="lable" for="yzminput">
-                    <input maxlength="1" class="lable" for="yzminput">
-                    <input maxlength="1" class="lable" for="yzminput">
+                    <input class="lable" for="yzminput">
+                    <input class="lable" for="yzminput">
+                    <input class="lable" for="yzminput">
+                    <input class="lable" for="yzminput">
                 </div>
                 <div class="getyzm">获取验证码</div>
             </div>
