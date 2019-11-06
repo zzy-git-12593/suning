@@ -21,7 +21,7 @@ export default {
   beforeMount () {
     bus.$on('searchSwiperList',data=>{
      this.shoppingCarList = data
-     console.log(this.shoppingCarList)
+     console.log('----------------------',this.shoppingCarList)
     })
   }
 };

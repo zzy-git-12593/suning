@@ -308,6 +308,8 @@ export default new Vuex.Store({
       console.log(results)
       return results
     },
+
+    // 计算总价
     computedPrice(state) {
       let result = 0
       for (let i = 0; i < state.shoppingCarList.length; i++) {

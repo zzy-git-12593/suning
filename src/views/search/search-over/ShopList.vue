@@ -81,12 +81,11 @@ export default {
       res.data.filter(item => {
         if (item.cmmdtyTitle.includes(this.searchcmmdtyTitle)) {
           this.searchcmmdtyList.push(item);
-          return this.searchcmmdtyList;
         }
       });
       console.log(this.searchcmmdtyList);
     });
-
+    // 给
      bus.$emit('searchSwiperList',this.searchcmmdtyList)
   },
 
