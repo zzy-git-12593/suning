@@ -3,7 +3,7 @@
     <!-- 活动banner -->
     <div class="banner-header">
       <div class="bgimg">
-        <img src="/images/homebanner/iphone活动.gif" alt />
+        <img src="images/homebanner/iphone活动.gif" alt />
       </div>
       <div class="active-img" v-for="(item,index) in activeList" :key="index">
         <img :src="item.imgUrl" alt />
@@ -17,28 +17,28 @@
       </div>
       <div class="banner-type-view">
         <div class="moblie">
-          <img src="/images/homebanner/苹果手机.jpg" alt />
+          <img src="images/homebanner/苹果手机.jpg" alt />
           <div class="banner-type-view-title">
             手机通讯
             <br />每满500减50
           </div>
         </div>
         <div class="golden">
-          <img src="/images/homebanner/项链.jpg" alt />
+          <img src="images/homebanner/项链.jpg" alt />
           <div class="banner-type-view-title">
             黄金项链
             <br />每满500减50
           </div>
         </div>
         <div class="drink">
-          <img src="/images/homebanner/德亚奶粉.jpg" alt />
+          <img src="images/homebanner/德亚奶粉.jpg" alt />
           <div class="banner-type-view-title">
             冲调饮品
             <br />2件8折
           </div>
         </div>
         <div class="cosmetics">
-          <img src="/images/homebanner/口红.jpg" alt />
+          <img src="images/homebanner/口红.jpg" alt />
           <div class="banner-type-view-title">
             全球购
             <br />低至5折
@@ -126,36 +126,36 @@ export default {
 }
 .electric {
   width: 50%;
-  background: url("/images/homebanner/创维美的.png") no-repeat;
+  background: url("../../../public/images/homebanner/创维美的.png") no-repeat;
   background-size: 100% 100%;
 }
 .wine {
   /* flex-grow: 1; */
   width: 50%;
-  background: url("/images/homebanner/品质美酒.jpg") no-repeat;
+  background: url("../../../public/images/homebanner/品质美酒.jpg") no-repeat;
   height: 75px;
   background-size: 100%;
 }
 .moblie {
-  background: url("/images/homebanner/手机通讯.png") no-repeat;
+  background: url("../../../public/images/homebanner/手机通讯.png") no-repeat;
   width: 26%;
   height: 100%;
   background-size:100%;
 }
 .golden {
-  background: url("/images/homebanner/黄金.png") no-repeat;
+  background: url("../../../public/images/homebanner/黄金.png") no-repeat;
   width: 24%;
   height: 100%;  
   background-size:100%;  
 }
 .drink {
-  background: url("/images/homebanner/饮品背景.png") no-repeat;
+  background: url("../../../public/images/homebanner/饮品背景.png") no-repeat;
   width: 24%;
   height: 100%;
   background-size:100%;  
 }
 .cosmetics {
-  background: url("/images/homebanner/全球购背景.png") no-repeat;
+  background: url("../../../public/images/homebanner/全球购背景.png") no-repeat;
   width: 26%;
   height: 100%;
   background-size:100%;  

@@ -275,7 +275,7 @@ export default new Vuex.Store({
   },
   actions: {
     getpopularListActions(store) {
-      axios.get("/json/type.json").then(data => {
+      axios.get("json/type.json").then(data => {
         store.commit('getpopularListMutations', data.data)
       });
     },
